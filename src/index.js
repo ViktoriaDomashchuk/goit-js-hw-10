@@ -7,8 +7,8 @@ const DEBOUNCE_DELAY = 300;
 
 const refs = {
   input: document.querySelector('#search-box'),
-  list: document.querySelector('country-list'),
-  container: document.querySelector('country-info'),
+  list: document.querySelector('.country-list'),
+  container: document.querySelector('.country-info'),
 };
 
 refs.input.addEventListener('input', debounce(onInputSearch, DEBOUNCE_DELAY));
@@ -40,24 +40,25 @@ function createMarkup(list) {
   if (list.length === 1) {
     refs.container.innerHTML = list
       .map(country => {
-        return `<ul class="info__list">
-  <li class="info__item">
-    <img src="${country.flags.svg}" alt="${
+        return `
+        <img class="card__img" src="${country.flags.svg}" alt="${
           country.name
-        }" height="auto" width="35px"/>
-    <span class="country__name">${country.name.official}</span>
+        }"/>
+        <ul class="card">
+  <li class="card__item">
+    <span class="card__name">${country.name.official}</span>
   </li>
-  <li class="info__item">
-    <p class="country__header">Capital:</p>
-    <span class="country__value">${country.capital}</span>
+  <li class="card__item">
+    <p class="card__desc">Capital:</p>
+    <span class="card__value">${country.capital}</span>
   </li>
-  <li class="info__item">
-    <p class="country__header">Population:</p>
-    <span class="country__value">${country.population}</span>
+  <li class="card__item">
+    <p class="card__desc">Population:</p>
+    <span class="card__value">${country.population}</span>
   </li>
-  <li class="info__item">
-    <p class="country__header">Languages:</p>
-    <span class="country__value">${Object.values(country.languages)}</span>
+  <li class="card__item">
+    <p class="card__desc">Languages:</p>
+    <span class="card__value">${Object.values(country.languages)}</span>
   </li>
 </ul>`;
       })
@@ -66,9 +67,9 @@ function createMarkup(list) {
   }
   refs.list.innerHTML = list
     .map(country => {
-      return `<li class="item">
-        <img class="container__img" src="${country.flags.svg}" alt="${country.name}" width="80"></img>
-        <h2 class="header">${country.name.official}</h2>
+      return `<li class="country__item">
+        <img class="country__img" src="${country.flags.svg}" alt="${country.name}"></img>
+        <h2 class="country__name">${country.name.official}</h2>
         </li>`;
     })
     .join('');

@@ -10,6 +10,8 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background-color:#c99b5d;
+
 }
 
 #search-box {
@@ -17,4 +19,89 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+input{
+  background-color: #d39f64;
+  border-radius: 0px 64px 65px 65px;
+  border: 4px solid #c29150;
+  margin-left: 5px;
+}
+
+input:active,
+input:focus{
+  box-shadow: 8px 5px 35px 20px rgba(202, 116, 39, 0.45);
+  outline: none;
+  border-radius: 0px 64px 65px 65px;
+}
+
+
+.country-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.country__item{
+display: flex;
+align-items: normal;
+gap: 15px;
+}
+
+.country__img{
+  max-width: 100px;
+  height: auto;
+}
+
+.country__name{
+  color: #5c3e16;
+  font-size: 25px;
+  font-weight: 700;
+  margin-left: 15px;
+  font-family: Bradley Hand, cursive;
+}
+.country-info{
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card__item{
+  display: flex;
+  align-items: center;
+}
+
+.card__img{
+  width: 150px;
+  height: auto;
+  margin-left: 40px;
+}
+
+.card__name{
+  font-size: 20px;
+  font-weight: 900;
+  color: #5c3e16;
+  font-family: Bradley Hand, cursive;
+}
+
+.card__desc{
+  color: #5c3e16;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  margin-right: 5px;
+  font-family: Bradley Hand, cursive;
+}
+
+.card__value{
+  color: #5c3e16;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Bradley Hand, cursive;
 }
